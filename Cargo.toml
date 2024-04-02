@@ -1,0 +1,17 @@
+[package]
+name = "deck"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+argh = "0.1.12"
+compact_str = { version = "0.7.1", features = ["serde"] }
+serde = "1.0.197"
+smallvec = { version = "1.13.1", features = ["serde"] }
+toml = "0.8.8"
+
+[profile.release]
+codegen-units = 1
+panic = "abort"
+strip = true
+lto = true
